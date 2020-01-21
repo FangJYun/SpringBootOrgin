@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+##### 数据源配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/study?useSSL=false&allowMultiQueries=true&useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    maxWait: 6000
+  cache:
+    ehcache:
+      config: classpath:/ehcache.xml
+
+##logger
+logging:
+  level:
+    com.study.study.user.mapper: debug
+
+##mybatis-plus
+mybatis-plus:
+  type-aliases-package: com.study.study.*.entity
